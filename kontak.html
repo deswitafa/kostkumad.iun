@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hubungi Kami - KostKu Madiun</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Baloo+2:wght@700;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap">
+  <link rel="stylesheet" href="src/css/base.css">
+  <link rel="stylesheet" href="src/css/components.css">
+  <link rel="stylesheet" href="src/css/pages/about.css">
+</head>
+<body>
+  <header class="header" id="site-header"></header>
+  <main>
+    <section class="hero hero--page">
+      <div class="container hero__inner">
+        <span class="pill"><span class="icon icon--fill">verified</span>Layanan Bantuan &amp; Kemitraan Madiun</span>
+        <h1 class="hero__title hero__title--page">Hubungi Kami</h1>
+        <p class="hero__sub">Punya pertanyaan seputar kos di Madiun atau ingin mendaftarkan properti Anda? Tim KostKu Madiun siap membantu dengan cepat dan ramah.</p>
+        <div class="hero__tags"><span class="pill"><span class="icon">schedule</span><span data-isi="jam"></span></span></div>
+      </div>
+    </section>
+
+    <section class="container section" style="display:flex;flex-direction:column;gap:24px">
+      <div class="wa-hero">
+        <div class="stack" style="gap:12px">
+          <div style="display:flex;flex-wrap:wrap;gap:8px"><span class="tag tag--tersedia">Respon cepat</span><span class="tag tag--info">Bebas Biaya Admin</span></div>
+          <h2 class="title-md">Chat Langsung dengan Admin KostKu Madiun</h2>
+          <p class="text-muted">Butuh rekomendasi kos dekat kampus, survei lokasi bersama, atau bantuan verifikasi pemilik? Hubungi kami lewat WhatsApp resmi.</p>
+          <div style="display:flex;align-items:center;gap:12px"><span class="icon" style="color:var(--green);font-size:28px">call</span>
+            <div><strong style="font-size:18px" data-isi="wa"></strong><br><small class="text-muted" data-isi="jam"></small></div></div>
+        </div>
+        <a class="btn btn--green btn--lg btn--block" id="wa-utama" target="_blank" rel="noopener noreferrer" href="#"><span class="icon">chat</span>Chat WhatsApp Sekarang</a>
+      </div>
+
+      <div class="kontak-grid">
+        <div class="stack">
+          <h3 class="title-sm">Media Sosial Resmi KostKu Madiun</h3>
+          <div class="grid grid--2">
+            <div class="sosmed"><div class="stack" style="gap:12px">
+              <span class="sosmed__ikon" style="background:linear-gradient(45deg,#FFB900,#E1306C,#833AB4)"><span class="icon">photo_camera</span></span>
+              <div><h4 style="font-size:18px">Instagram</h4><strong style="color:var(--blue)">@kostku_madiun</strong>
+              <p class="text-muted" style="margin-top:6px">Info ketersediaan kamar, galeri foto kos terverifikasi, dan cerita perantau Madiun.</p></div></div>
+              <a class="btn btn--blue btn--block" id="link-ig" target="_blank" rel="noopener noreferrer" href="#">Buka Instagram <span class="icon">arrow_outward</span></a></div>
+            <div class="sosmed"><div class="stack" style="gap:12px">
+              <span class="sosmed__ikon" style="background:var(--ink)"><span class="icon">play_circle</span></span>
+              <div><h4 style="font-size:18px">TikTok Resmi</h4><strong style="color:var(--blue)">@kostkumadiun</strong>
+              <p class="text-muted" style="margin-top:6px">Video room tour kamar kos seputar UNIPMA dan Poltek Madiun.</p></div></div>
+              <a class="btn btn--blue btn--block" id="link-tt" style="background:var(--ink)" target="_blank" rel="noopener noreferrer" href="#">Buka TikTok <span class="icon">play_circle</span></a></div>
+          </div>
+        </div>
+        <div class="card card--pad">
+          <h3 class="title-sm">Pusat Informasi &amp; Verifikasi</h3>
+          <p class="info-baris"><span class="icon">location_on</span><span><strong>Area Operasional:</strong><br>Kota Madiun, Jawa Timur</span></p>
+          <p class="info-baris"><span class="icon">email</span><span><strong>Email Kemitraan:</strong><br><span data-isi="email"></span></span></p>
+          <p class="info-baris"><span class="icon">diversity_3</span><span><strong>Pendampingan:</strong><br>Pendampingan survei fisik bagi mahasiswa baru dari luar kota tanpa biaya perantara.</span></p>
+        </div>
+      </div>
+
+      <div class="catatan">
+        <span class="catatan__ikon"><span class="icon">gpp_maybe</span></span>
+        <div><h4 style="font-size:18px;margin-bottom:4px">Catatan Keamanan &amp; Panduan Transaksi</h4>
+          <p class="text-muted" style="line-height:1.6">KostKu Madiun tidak pernah meminta transfer uang muka ke rekening pribadi. Lakukan survei langsung atau minta video call real-time sebelum membayar uang muka apa pun.</p></div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer" id="site-footer"></footer>
+  <script type="module">
+    import { mountLayout } from './src/js/components/layout.js';
+    import { SITE } from './src/js/config.js';
+    import { linkAdmin } from './src/js/lib/whatsapp.js';
+    mountLayout('kontak');
+    const isi = { jam: SITE.jamOperasional, wa: SITE.whatsappTampil, email: SITE.email };
+    document.querySelectorAll('[data-isi]').forEach((el) => (el.textContent = isi[el.dataset.isi]));
+    document.getElementById('wa-utama').href = linkAdmin('Halo Admin KostKu Madiun, saya ingin bertanya seputar rekomendasi dan ketersediaan kamar kos.');
+    document.getElementById('link-ig').href = SITE.instagram;
+    document.getElementById('link-tt').href = SITE.tiktok;
+  </script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portal Pemilik Kos - KostKu Madiun</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap">
+  <link rel="stylesheet" href="src/css/base.css">
+  <link rel="stylesheet" href="src/css/components.css">
+  <link rel="stylesheet" href="src/css/pages/pemilik.css">
+</head>
+<body class="portal-body">
+  <header class="header portal-header">
+    <div class="header__bar container">
+      <div style="display:flex;align-items:center;gap:12px">
+        <a class="brand" href="index.html"><span class="brand__logo"><span class="icon">home_work</span></span>
+          <span class="brand__text"><span class="brand__name">Kost<em>Ku</em></span><small>MADIUN</small></span></a>
+        <span class="badge-portal">Portal Pemilik Kos</span>
+      </div>
+      <a class="nav__link" href="pemilik.html"><span class="icon" style="font-size:16px">arrow_back</span>&nbsp;Kembali</a>
+    </div>
+  </header>
+
+  <main class="portal-main">
+    <div class="container container--narrow portal">
+      <div class="portal__top">
+        <div><h1 class="title-lg">Halaman Pemilik Kos</h1>
+          <p class="text-muted">Daftarkan properti kos Anda di Kota Madiun. Pemeriksaan dan pengajuan gratis.</p></div>
+        <div class="tabs" role="tablist">
+          <button class="tabs__btn is-active" type="button" data-tab="form" role="tab"><span class="icon">note_add</span>Ajukan Kos</button>
+          <button class="tabs__btn" type="button" data-tab="status" role="tab"><span class="icon">manage_search</span>Cek Status</button>
+        </div>
+      </div>
+
+      <ol class="stepper" id="stepper" aria-label="Tahapan pengajuan" style="list-style:none;margin:0"></ol>
+
+      <!-- Tab 1: formulir pengajuan -->
+      <form class="form-card" id="view-form" novalidate>
+        <div class="progress"><div class="progress__top"><span>Kelengkapan formulir</span><span id="progres-teks">0 dari 5 bagian</span></div>
+          <div class="progress__bar"><span id="progres-bar"></span></div></div>
+
+        <fieldset class="bagian"><legend><b>1</b>Info Kos</legend><div class="bagian__isi">
+          <div class="field"><label for="namaKos">Nama Kos Resmi <span class="req">*</span></label>
+            <input class="input" id="namaKos" name="namaKos" placeholder="Contoh: Kos Graha Asri UNIPMA Madiun" required></div>
+          <div class="field"><span class="label">Jenis Penghuni <span class="req">*</span></span>
+            <div class="opsi-tipe" id="opsi-tipe">
+              <label style="--bg:#FFF0F5;--c:#C2185B"><input type="radio" name="tipe" value="Putri"><span><span class="icon">female</span> Khusus Putri<small>Mahasiswi / Karyawati</small></span></label>
+              <label style="--bg:#EDF4FF;--c:#1565C0"><input type="radio" name="tipe" value="Putra"><span><span class="icon">male</span> Khusus Putra<small>Mahasiswa / Karyawan</small></span></label>
+              <label style="--bg:#F5EEFD;--c:#6A1B9A"><input type="radio" name="tipe" value="Campuran"><span><span class="icon">wc</span> Campuran<small>Putra / Putri / Pasutri</small></span></label>
+            </div></div>
+          <div class="field"><label for="deskripsi">Deskripsi Properti Kos</label>
+            <textarea class="textarea" id="deskripsi" name="deskripsi" maxlength="2000" placeholder="Jelaskan lingkungan kos, akses jalan terdekat, jam malam, dan aturan khusus..."></textarea>
+            <span class="field__hint" id="hitung-deskripsi">0 / 2000 karakter</span></div>
+        </div></fieldset>
+
+        <fieldset class="bagian"><legend><b>2</b>Lokasi dan Kontak</legend><div class="bagian__isi">
+          <div class="field"><label for="alamat">Alamat Lengkap di Madiun <span class="req">*</span></label>
+            <input class="input" id="alamat" name="alamat" placeholder="Jl. Setia Budi No. 42, Kec. Kartoharjo, Kota Madiun" required></div>
+          <div class="field"><label for="gmaps">Tautan Google Maps</label>
+            <input class="input" id="gmaps" name="gmaps" type="url" placeholder="https://maps.app.goo.gl/..."></div>
+          <div class="grid-form-2">
+            <div class="field"><label for="wa">Nomor WhatsApp Kos <span class="req">*</span></label>
+              <input class="input" id="wa" name="wa" type="tel" inputmode="tel" placeholder="081234567890" required>
+              <span class="field__hint">Dipakai calon penghuni untuk chat langsung</span></div>
+            <div class="field"><label for="telpAlt">Telepon Alternatif</label>
+              <input class="input" id="telpAlt" name="telpAlt" type="tel" placeholder="Opsional"></div>
+            <div class="field"><label for="namaPemilik">Nama Pemilik / Pengelola <span class="req">*</span></label>
+              <input class="input" id="namaPemilik" name="namaPemilik" placeholder="Sesuai KTP" required></div>
+            <div class="field"><label for="email">Email Pemilik <span class="req">*</span></label>
+              <input class="input" id="email" name="email" type="email" placeholder="nama@email.com" required>
+              <span class="field__hint">Dipakai untuk mengecek status pengajuan</span></div>
+          </div>
+        </div></fieldset>
+
+        <fieldset class="bagian"><legend><b>3</b>Harga dan Kamar</legend><div class="bagian__isi">
+          <p class="field__hint">Isi minimal salah satu harga (harga bulanan wajib).</p>
+          <div class="grid-form-3">
+            <div class="field"><label for="hargaHarian">Harga Harian</label><input class="input" id="hargaHarian" name="hargaHarian" data-rupiah inputmode="numeric" placeholder="Rp 0"></div>
+            <div class="field"><label for="hargaBulanan">Harga Bulanan <span class="req">*</span></label><input class="input" id="hargaBulanan" name="hargaBulanan" data-rupiah inputmode="numeric" placeholder="Rp 0" required></div>
+            <div class="field"><label for="hargaTahunan">Harga Tahunan</label><input class="input" id="hargaTahunan" name="hargaTahunan" data-rupiah inputmode="numeric" placeholder="Rp 0"></div>
+          </div>
+          <div class="grid-form-2">
+            <div class="field"><label for="totalKamar">Total Kamar <span class="req">*</span></label><input class="input" id="totalKamar" name="totalKamar" type="number" min="1" required></div>
+            <div class="field"><label for="sisaKamar">Sisa Kamar Kosong <span class="req">*</span></label><input class="input" id="sisaKamar" name="sisaKamar" type="number" min="0" required></div>
+          </div>
+        </div></fieldset>
+
+        <fieldset class="bagian"><legend><b>4</b>Fasilitas Tersedia</legend><div class="bagian__isi">
+          <div style="display:flex;flex-wrap:wrap;gap:10px" id="chips-fasilitas"></div></div></fieldset>
+
+        <fieldset class="bagian"><legend><b>5</b>Foto Properti (maksimal 10)</legend><div class="bagian__isi">
+          <label class="dropzone" id="dropzone" for="input-foto"><span class="icon">add_photo_alternate</span>
+            <span>Tarik &amp; jatuhkan foto di sini, atau <u>pilih berkas</u></span>
+            <small class="text-muted">JPG, PNG, WEBP — maksimal 5 MB per foto</small></label>
+          <input class="sr-only" type="file" id="input-foto" accept="image/jpeg,image/png,image/webp" multiple>
+          <p class="field__hint" id="info-foto">0 dari 10 foto terunggah</p>
+          <div class="thumbs" id="thumbs"></div>
+        </div></fieldset>
+
+        <div class="form-akhir">
+          <label class="check"><input type="checkbox" id="setuju" name="setuju"><span>Data yang saya isi benar dan saya adalah pemilik atau pengelola resmi kos ini.</span></label>
+          <div class="info-hijau"><span class="icon">info</span>Pengajuan dan pemeriksaan gratis. Biaya mitra dibayar setelah pengajuan disetujui.</div>
+          <div class="form-akhir__aksi"><span class="text-muted">Estimasi verifikasi 1x24 jam kerja</span>
+            <button class="btn btn--yellow btn--lg" type="submit">Ajukan Kos Sekarang <span class="icon">arrow_forward</span></button></div>
+        </div>
+      </form>
+
+      <!-- Setelah pengajuan terkirim -->
+      <section class="hidden" id="view-submitted" aria-live="polite"></section>
+
+      <!-- Tab 2: cek status -->
+      <section class="hidden" id="view-status">
+        <div class="card card--pad" style="margin-bottom:24px">
+          <h2 class="title-sm" style="margin-bottom:12px"><span class="icon" style="color:var(--blue)">manage_search</span> Cari Data Pengajuan Anda</h2>
+          <form class="cek-form" id="form-cek">
+            <div class="field"><label for="cek-kode">Nomor Pengajuan</label><div class="input-icon"><span class="icon">tag</span><input class="input" id="cek-kode" placeholder="Contoh: KM-0012" required></div></div>
+            <div class="field"><label for="cek-email">Email Terdaftar</label><div class="input-icon"><span class="icon">mail</span><input class="input" id="cek-email" type="email" placeholder="email@domain.com" required></div></div>
+            <button class="btn btn--blue btn--lg" type="submit">Cek Status</button>
+          </form>
+                  </div>
+        <div id="hasil-status" aria-live="polite"></div>
+      </section>
+    </div>
+  </main>
+  <script type="module" src="src/js/pages/portal.js"></script>
+</body>
+</html>

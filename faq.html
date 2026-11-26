@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FAQ - KostKu Madiun</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Baloo+2:wght@700;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap">
+  <link rel="stylesheet" href="src/css/base.css">
+  <link rel="stylesheet" href="src/css/components.css">
+  <link rel="stylesheet" href="src/css/pages/faq.css">
+</head>
+<body>
+  <header class="header" id="site-header"></header>
+  <main>
+    <section class="hero hero--page hero--faq">
+      <div class="container hero__inner">
+        <span class="pill"><span class="icon">help_center</span>Pusat Bantuan &amp; Panduan KostKu</span>
+        <h1 class="hero__title hero__title--page">Ada yang Bisa Kami Bantu?</h1>
+        <p class="hero__sub">Temukan jawaban seputar cara cari kos, verifikasi kamar, pembayaran, dan kemitraan pemilik kos di Madiun.</p>
+      </div>
+    </section>
+    <div class="faq-search">
+      <form id="faq-form" role="search">
+        <label><span class="icon">search</span><input type="search" id="faq-q" placeholder="Cari pertanyaan (contoh: biaya admin, survei, UNIPMA)..." aria-label="Cari pertanyaan"></label>
+        <button class="btn btn--yellow btn--lg" type="submit">Cari Jawaban</button>
+      </form>
+    </div>
+    <div class="container">
+      <div class="faq-chips" id="faq-kategori" role="group" aria-label="Kategori pertanyaan"></div>
+      <div class="faq-list">
+        <div class="faq-list__top"><span><span class="icon">lightbulb</span>Menampilkan Tanya Jawab Terverifikasi</span><span id="faq-jumlah"></span></div>
+        <div class="accordion" id="faq-daftar"></div>
+        <div class="state-box hidden" id="faq-kosong" style="margin-top:24px">
+          <div class="state-box__icon"><span class="icon">manage_search</span></div><h3>Pertanyaan tidak ditemukan</h3>
+          <p>Kata kunci Anda belum ada di daftar FAQ. Hubungi admin kami lewat WhatsApp untuk jawaban langsung.</p>
+        </div>
+      </div>
+      <div class="cta-banner faq-cta"><div class="cta-banner__inner">
+        <div><span class="pill"><span class="icon">support_agent</span>Layanan Pelanggan Aktif</span>
+          <h2 style="margin-top:12px;font-size:28px">Masih Ada Pertanyaan Lain?</h2>
+          <p id="faq-jam"></p></div>
+        <a class="btn btn--green btn--lg" id="faq-wa" target="_blank" rel="noopener noreferrer" href="#"><span class="icon">chat</span>Hubungi Admin WhatsApp</a>
+      </div></div>
+    </div>
+  </main>
+  <footer class="footer" id="site-footer"></footer>
+  <script type="module" src="src/js/pages/faq.js"></script>
+</body>
+</html>

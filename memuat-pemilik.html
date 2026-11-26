@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Memuat Halaman Pemilik – KostKu Madiun</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0}
+html,body{height:100%}
+body{font-family:Inter,system-ui,sans-serif;color:#fff;overflow:hidden}
+.screen{position:relative;height:100%;min-height:600px;overflow:hidden;background:linear-gradient(135deg,#FFF3D1,#EAF1FF);padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+.blob{position:absolute;border-radius:50%;filter:blur(40px);animation:drift 14s ease-in-out infinite alternate}
+.b1{width:380px;height:380px;background:#FFC845;left:-80px;top:8%}
+.b2{width:320px;height:320px;background:#3DD6A5;left:40%;bottom:-60px;animation-delay:-4s}
+.b3{width:360px;height:360px;background:#9B8CFF;right:-60px;top:-70px;animation-delay:-8s}
+.b4{width:240px;height:240px;background:#FF9EC4;right:18%;top:52%;animation-delay:-2s}
+@keyframes drift{to{transform:translate(50px,-30px) scale(1.15)}}
+.people{position:absolute;inset:0;width:100%;height:100%;opacity:.4}
+.walk{animation:walk 26s ease-in-out infinite alternate}
+.w2{animation-duration:32s}.w3{animation-duration:22s}.w4{animation-duration:36s}
+@keyframes walk{to{transform:translateX(150px)}}
+.bob{animation:bob .9s ease-in-out infinite alternate}
+@keyframes bob{to{transform:translateY(-5px)}}
+.glass{position:absolute;inset:0;background:linear-gradient(100deg,rgba(23,42,94,.62),rgba(30,70,200,.42) 50%,rgba(106,92,240,.3))}
+.float{position:absolute;color:#fff;font-size:26px;opacity:.55;animation:fl 6s ease-in-out infinite alternate}
+@keyframes fl{to{transform:translateY(-22px) rotate(12deg)}}
+.center{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:24px 6vw;text-align:center}
+.badge{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.45);backdrop-filter:blur(8px);font-size:12px;font-weight:600;padding:7px 14px;border-radius:99px}
+.stage{position:relative;width:min(270px,62vw);aspect-ratio:300/340}
+#kosty{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+h1{font-family:'Baloo 2','Arial Rounded MT Bold',sans-serif;font-weight:800;font-size:clamp(26px,5vw,38px);line-height:1.1;text-shadow:0 3px 14px rgba(23,42,94,.55)}
+h1 em{font-style:normal;display:inline-block;background:#FFC845;color:#3D2B00;padding:0 .3em;border-radius:12px;transform:rotate(-2deg);text-shadow:none;box-shadow:0 0 26px rgba(255,200,69,.7)}
+.msg{font-size:15px;font-weight:600;text-shadow:0 2px 10px rgba(23,42,94,.55);min-height:22px}
+.bar{width:min(420px,84vw);height:16px;background:rgba(255,255,255,.3);border-radius:99px;padding:3px;box-shadow:inset 0 1px 4px rgba(23,42,94,.2)}
+.fill{height:100%;width:0;border-radius:99px;background:#FFC845;box-shadow:0 0 14px rgba(255,200,69,.8);transition:width .25s linear}
+.pct{font-size:13px;font-weight:700;text-shadow:0 2px 8px rgba(23,42,94,.5)}
+.tip{width:min(440px,88vw);background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.45);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-radius:20px;padding:12px 18px;font-size:13.5px;line-height:1.5;min-height:62px;display:flex;align-items:center;justify-content:center;transition:opacity .3s}
+.go{display:none;background:#FFC845;color:#3D2B00;font:700 15px Inter;padding:13px 28px;border-radius:99px;border:0;cursor:pointer;box-shadow:0 10px 26px rgba(23,42,94,.3);animation:pop .5s}
+@keyframes pop{from{transform:scale(.7);opacity:0}}
+.done .go{display:inline-block}
+.done .bar,.done .tip{display:none}
+/* Kosty */
+.jump{transform-origin:150px 312px;animation:jump 2.6s infinite}
+@keyframes jump{0%,45%,100%{transform:none;animation-timing-function:ease-in-out}
+52%{transform:translateY(5px) scale(1.07,.92);animation-timing-function:cubic-bezier(.2,.7,.3,1)}
+68%{transform:translateY(-52px) scale(.95,1.07);animation-timing-function:ease-in-out}
+78%{transform:translateY(-62px) scale(.97,1.03);animation-timing-function:cubic-bezier(.6,0,.9,.4)}
+90%{transform:translateY(0) scale(1.08,.9);animation-timing-function:ease-out}
+95%{transform:scale(.98,1.03)}}
+.shadow{transform-origin:150px 322px;animation:sh 2.6s infinite}
+@keyframes sh{0%,45%,100%{transform:none;opacity:.28}68%,78%{transform:scale(.7);opacity:.15}90%{transform:scale(1.1);opacity:.32}}
+.breathe{transform-origin:150px 312px;animation:br 3s ease-in-out infinite}
+@keyframes br{50%{transform:scale(1.015,1.025) rotate(1.2deg)}}
+.armL{transform-origin:76px 228px;animation:wave 3s ease-in-out infinite}
+@keyframes wave{0%,50%,100%{transform:rotate(8deg)}8%{transform:rotate(-26deg)}16%{transform:rotate(6deg)}24%{transform:rotate(-26deg)}32%{transform:rotate(6deg)}40%{transform:rotate(-20deg)}}
+.key{transform-origin:258px 272px;animation:sw 1.6s ease-in-out .3s infinite}
+@keyframes sw{0%,100%{transform:rotate(-9deg)}50%{transform:rotate(10deg)}}
+.tassel{transform-origin:192px 80px;animation:sw 1.4s ease-in-out infinite}
+.eye{transform-box:fill-box;transform-origin:center;animation:bl 4s infinite}
+@keyframes bl{0%,92%,100%{transform:scaleY(1)}96%{transform:scaleY(.08)}}
+.snd{position:absolute;z-index:5;top:calc(14px + env(safe-area-inset-top,0px));right:14px;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.45);background:rgba(255,255,255,.18);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:#fff;font-size:20px;cursor:pointer}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+</head>
+<body>
+<main class="screen" id="screen">
+  <button class="snd" id="snd" type="button" aria-label="Nyalakan suara" title="Suara">&#128263;</button>
+  <i class="blob b1"></i><i class="blob b2"></i><i class="blob b3"></i><i class="blob b4"></i>
+
+  <svg class="people" viewBox="0 0 1200 640" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <defs>
+      <g id="p"><rect x="-9" y="-2" width="7" height="24" rx="3" fill="#2B3A7A"/><rect x="2" y="-2" width="7" height="24" rx="3" fill="#2B3A7A"/><rect x="-13" y="-36" width="26" height="40" rx="11" fill="currentColor"/><circle cy="-47" r="10" fill="#FFD3B0"/><path d="M-10 -49a10 10 0 0 1 20 0z" fill="#2B2250"/></g>
+    </defs>
+    <g class="walk"><g class="bob"><use href="#p" x="120" y="480" style="color:#FF8A4C"/></g></g>
+    <g class="walk w2"><g class="bob"><use href="#p" x="480" y="540" style="color:#3DD6A5"/></g></g>
+    <g class="walk w3"><g class="bob"><use href="#p" x="800" y="500" style="color:#9B8CFF"/></g></g>
+    <g class="walk w4"><g class="bob"><use href="#p" x="1000" y="550" style="color:#FF9EC4"/></g></g>
+  </svg>
+
+  <div class="glass"></div>
+  <span class="float" style="left:8%;top:16%">&#9733;</span><span class="float" style="left:48%;top:8%;animation-delay:-2s">&#9679;</span>
+  <span class="float" style="left:14%;top:76%;animation-delay:-3s">&#9733;</span><span class="float" style="right:8%;top:64%;animation-delay:-1s">&#9679;</span>
+
+  <div class="center" id="center">
+    <span class="badge">Portal Pemilik Kos</span>
+    <div class="stage">
+      <svg id="kosty" viewBox="0 0 300 340" aria-label="Kosty Madiun">
+        <defs>
+          <radialGradient id="bg" cx=".32" cy=".25" r=".9"><stop offset="0" stop-color="#fff"/><stop offset=".6" stop-color="#EEF3FF"/><stop offset="1" stop-color="#C9D6F2"/></radialGradient>
+          <linearGradient id="rg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFE48F"/><stop offset="1" stop-color="#F2A41B"/></linearGradient>
+        </defs>
+        <ellipse class="shadow" cx="150" cy="322" rx="82" ry="12" fill="#0A1A4A"/>
+        <g class="jump"><g class="breathe">
+          <rect x="112" y="294" width="28" height="26" rx="12" fill="#DCE6FA"/><rect x="162" y="294" width="28" height="26" rx="12" fill="#DCE6FA"/>
+          <rect x="70" y="150" width="160" height="162" rx="36" fill="url(#bg)"/>
+          <ellipse cx="108" cy="176" rx="22" ry="10" fill="#fff" opacity=".7"/>
+          <path d="M134 312V286a16 16 0 0 1 32 0V312z" fill="#3F6BF0"/><circle cx="160" cy="298" r="2.6" fill="#FFC845"/>
+          <g fill="none" stroke="#2F5BD8" stroke-width="3" stroke-linecap="round"><path d="M196 276a14 14 0 0 1 20 0"/><path d="M200 282a8 8 0 0 1 12 0"/></g><circle cx="206" cy="289" r="2.4" fill="#2F5BD8"/>
+          <g class="eye"><ellipse cx="122" cy="216" rx="11" ry="14" fill="#172A5E"/><circle cx="126" cy="210" r="4.5" fill="#fff"/></g>
+          <g class="eye"><ellipse cx="178" cy="216" rx="11" ry="14" fill="#172A5E"/><circle cx="182" cy="210" r="4.5" fill="#fff"/></g>
+          <ellipse cx="98" cy="240" rx="12" ry="7" fill="#FF9EC4" opacity=".85"/><ellipse cx="202" cy="240" rx="12" ry="7" fill="#FF9EC4" opacity=".85"/>
+          <path d="M138 238q12 16 24 0z" fill="#E0436B" stroke="#172A5E" stroke-width="3.5" stroke-linejoin="round"/>
+          <path d="M50 172L150 82l100 90q4 14-10 14H60q-14 0-10-14z" fill="url(#rg)"/>
+          <path d="M60 186h180" stroke="#C97F0C" stroke-width="5" opacity=".45" stroke-linecap="round"/>
+          <ellipse cx="108" cy="130" rx="30" ry="9" fill="#fff" opacity=".4" transform="rotate(-38 108 130)"/>
+          <path d="M126 92v14q24 12 48 0V92z" fill="#223A7C"/><path d="M104 82L150 62l46 20-46 20z" fill="#172A5E"/>
+          <g class="tassel"><path d="M192 80l4 24" stroke="#FFC845" stroke-width="3" stroke-linecap="round"/><circle cx="196" cy="108" r="4.5" fill="#FFC845"/></g>
+          <g class="armL"><path d="M76 228Q50 220 40 192" stroke="#C9D6F2" stroke-width="20" stroke-linecap="round" fill="none"/><path d="M76 228Q50 220 40 192" stroke="#F7F9FF" stroke-width="15" stroke-linecap="round" fill="none"/><circle cx="40" cy="190" r="12" fill="#F7F9FF" stroke="#C9D6F2" stroke-width="2"/></g>
+          <path d="M224 228Q250 240 256 264" stroke="#C9D6F2" stroke-width="20" stroke-linecap="round" fill="none"/><path d="M224 228Q250 240 256 264" stroke="#F7F9FF" stroke-width="15" stroke-linecap="round" fill="none"/>
+          <g class="key"><rect x="256" y="274" width="4" height="24" fill="#FFC845"/><rect x="260" y="286" width="7" height="4" fill="#FFC845"/><rect x="260" y="293" width="5" height="4" fill="#FFC845"/><circle cx="258" cy="270" r="7" fill="none" stroke="#FFC845" stroke-width="4"/></g>
+          <circle cx="256" cy="266" r="12" fill="#F7F9FF" stroke="#C9D6F2" stroke-width="2"/>
+        </g></g>
+      </svg>
+    </div>
+
+    <h1 id="title">Yeay, selamat datang, <em>Mitra!</em></h1>
+    <p class="msg" id="msg">Menyiapkan halaman pemilik kos...</p>
+    <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"><div class="fill" id="fill"></div></div>
+    <span class="pct" id="pct">0%</span>
+    <div class="tip" id="tip">Foto kos yang terang dan rapi bikin calon penghuni lebih percaya.</div>
+    <button class="go" id="go" type="button">Masuk ke Portal Pemilik &rarr;</button>
+  </div>
+</main>
+
+<script>
+(function () {
+  // Ganti dengan alamat halaman pemilik kos yang sebenarnya
+  var Snd=(function(){
+    var ctx,master,nb,timer,on=false,step=0,next=0,P={bpm:92.3,tick:true,wave:'triangle',bass:true};
+    var M=[659.25,0,783.99,659.25,523.25,0,587.33,0, 880,0,783.99,0,659.25,0,587.33,659.25, 880,0,1046.5,880,783.99,0,659.25,0, 587.33,0,659.25,783.99,659.25,0,587.33,0];
+    var R=[130.81,110,87.31,98];
+    function init(){if(ctx)return;ctx=new(window.AudioContext||window.webkitAudioContext)();master=ctx.createGain();master.gain.value=.2;master.connect(ctx.destination);nb=ctx.createBuffer(1,2205,44100);var d=nb.getChannelData(0);for(var i=0;i<d.length;i++)d[i]=Math.random()*2-1;}
+    function tone(f,t,d,type,v,f2){var o=ctx.createOscillator(),g=ctx.createGain();o.type=type;o.frequency.setValueAtTime(f,t);if(f2)o.frequency.exponentialRampToValueAtTime(f2,t+d*.6);g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(v,t+.012);g.gain.exponentialRampToValueAtTime(.0001,t+d);o.connect(g);g.connect(master);o.start(t);o.stop(t+d+.05);}
+    function tk(t){var s=ctx.createBufferSource(),h=ctx.createBiquadFilter(),g=ctx.createGain();s.buffer=nb;h.type='highpass';h.frequency.value=7000;g.gain.setValueAtTime(.12,t);g.gain.exponentialRampToValueAtTime(.0001,t+.04);s.connect(h);h.connect(g);g.connect(master);s.start(t);}
+    function sched(){var sd=60/P.bpm/2;while(next<ctx.currentTime+.15){var s=step%32,f=M[s];if(f){tone(f,next,.45,P.wave,.5);tone(f*2,next,.2,'sine',.1);}if(P.bass&&s%4===0)tone(R[s>>3],next,.35,'sine',.7);if(P.tick&&s%2)tk(next);next+=sd;step++;}}
+    function seq(a,gap,type,d,v){var t=ctx.currentTime+.02;a.forEach(function(f,i){tone(f,t+i*gap,d,type,v);});}
+    var FX={
+      boing:function(){tone(220,ctx.currentTime,.3,'sine',.8,620);},
+      whoosh:function(){tone(350,ctx.currentTime,.3,'sine',.5,1500);},
+      sleepy:function(){seq([659.25,523.25,392],.28,'triangle',.5,.5);},
+      fanfare:function(){seq([523.25,659.25,783.99,1046.5],.1,'triangle',.4,.6);seq([1568,2093,2637],.08,'sine',.5,.15);}
+    };
+    return{
+      get on(){return on;},
+      set:function(p){for(var k in p)P[k]=p[k];},
+      fx:function(n){if(on&&FX[n])FX[n]();},
+      start:function(){init();ctx.resume();on=true;next=ctx.currentTime+.05;clearInterval(timer);timer=setInterval(sched,40);},
+      stop:function(){on=false;clearInterval(timer);}
+    };
+  })();
+  var sb=document.getElementById('snd');
+  sb.addEventListener('click',function(){
+    if(Snd.on){Snd.stop();sb.innerHTML='&#128263;';sb.setAttribute('aria-label','Nyalakan suara');}
+    else{Snd.start();sb.innerHTML='&#128266;';sb.setAttribute('aria-label','Matikan suara');}
+  });
+  // bunyi "boing" tepat saat Kosty mendarat
+  var jp=document.querySelector('.jump');
+  (function nb(){var a=jp.getAnimations&&jp.getAnimations()[0];var d=2340;if(a){d=((2340-(Number(a.currentTime)%2600))+2600)%2600;}setTimeout(function(){Snd.fx('boing');nb();},d);})();
+
+  var TUJUAN = 'portal-pemilik.html';
+  var DURASI = 5200; // lama loading (ms)
+
+  var steps = [
+    [0, 'Menyiapkan halaman pemilik kos...'],
+    [35, 'Merapikan kamar-kamar kos...'],
+    [65, 'Menyiapkan kunci untuk Anda...'],
+    [90, 'Sedikit lagi, Kosty kebut ya!']
+  ];
+  var tips = [
+    'Foto kos yang terang dan rapi bikin calon penghuni lebih percaya.',
+    'Cantumkan harga dan fasilitas selengkap mungkin agar cepat disewa.',
+    'Calon penghuni bisa langsung menghubungi Anda lewat WhatsApp.',
+    'Pengajuan dan pemeriksaan data gratis. Biaya mitra baru dibayar setelah pengajuan disetujui.'
+  ];
+
+  var fill = document.getElementById('fill'), pct = document.getElementById('pct');
+  var msg = document.getElementById('msg'), tip = document.getElementById('tip');
+  var center = document.getElementById('center'), title = document.getElementById('title');
+  var go = document.getElementById('go');
+
+  function masuk() {
+    try { location.href = TUJUAN; } catch (e) {}
+  }
+  go.addEventListener('click', masuk);
+
+  var ti = 0;
+  setInterval(function () {
+    ti = (ti + 1) % tips.length;
+    tip.style.opacity = 0;
+    setTimeout(function () { tip.textContent = tips[ti]; tip.style.opacity = 1; }, 280);
+  }, 2400);
+
+  var t0 = performance.now(), finished = false;
+  function tick(now) {
+    var p = Math.min(1, (now - t0) / DURASI);
+    var eased = 1 - Math.pow(1 - p, 1.6);
+    var v = Math.round(eased * 100);
+    fill.style.width = v + '%';
+    pct.textContent = v + '%';
+    for (var i = steps.length - 1; i >= 0; i--) {
+      if (v >= steps[i][0]) { msg.textContent = steps[i][1]; break; }
+    }
+    if (p < 1) { requestAnimationFrame(tick); }
+    else if (!finished) {
+      finished = true;
+      Snd.fx('fanfare');
+      center.classList.add('done');
+      title.innerHTML = 'Semua siap, <em>Mitra!</em>';
+      msg.textContent = 'Halaman pemilik kos sudah menunggu Anda.';
+      setTimeout(masuk, 1200);
+    }
+  }
+  requestAnimationFrame(tick);
+})();
+</script>
+</body>
+</html>

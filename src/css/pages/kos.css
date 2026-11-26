@@ -1,0 +1,43 @@
+/* kos.css — halaman Cari Kos */
+.search-float { position: relative; z-index: 10; margin-top: -32px; margin-bottom: 32px; }
+.searchbar { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; padding: 12px; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow-md); }
+.searchbar__field { display: flex; flex: 1; align-items: center; gap: 12px; min-width: 220px; padding-inline: 12px; color: var(--blue); }
+.searchbar__field input { flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; color: var(--ink); }
+.searchbar__field input::placeholder { color: rgba(116,118,133,.8); }
+.searchbar__tipe { display: flex; align-items: center; gap: 8px; }
+.searchbar__tipe label { font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.searchbar__tipe .select { min-height: 40px; border-radius: 99px; padding-block: 6px; }
+
+.kos-layout { display: grid; grid-template-columns: 300px 1fr; gap: 32px; align-items: start; padding-bottom: 64px; }
+.filter { position: sticky; top: 100px; padding: 20px; }
+.filter__head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--line); }
+.filter__title { display: flex; align-items: center; gap: 8px; font-size: 18px; font-weight: 700; }
+.filter__title .icon { color: var(--blue); }
+.filter__reset { font-size: 13px; font-weight: 700; color: var(--blue); }
+.filter__reset:hover { text-decoration: underline; }
+.filter__group { margin-bottom: 24px; border: 0; padding: 0; min-width: 0; }
+.filter__group legend { margin-bottom: 10px; padding: 0; font-size: 15px; font-weight: 700; }
+.filter__chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.check { display: flex; align-items: center; gap: 12px; padding: 8px; border-radius: 12px; cursor: pointer; transition: background .2s; }
+.check:hover { background: var(--soft-2); }
+.check input { width: 16px; height: 16px; accent-color: var(--blue); }
+
+.results__bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 24px; padding: 16px; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); }
+.results__count { display: flex; align-items: center; gap: 12px; font-size: 15px; font-weight: 700; }
+.results__count .icon { color: var(--blue); font-size: 24px; }
+.results__tools { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; }
+.results__tools .select { width: auto; min-height: 38px; padding-block: 6px; font-size: 13px; font-weight: 600; }
+.results__grid { padding-top: 96px; margin-top: -72px; } /* ruang untuk gelembung Kosty */
+
+.pager { display: flex; justify-content: center; gap: 8px; margin-top: 40px; }
+.pager button { display: grid; place-items: center; min-width: 40px; height: 40px; padding-inline: 12px; border-radius: 99px; font-weight: 700; }
+.pager button:hover:not(:disabled) { background: var(--soft); }
+.pager button.is-active { background: var(--blue); color: #fff; }
+.pager button:disabled { opacity: .4; cursor: not-allowed; }
+
+.banner-bantuan { text-align: center; }
+.banner-bantuan .hero__inner { display: flex; flex-direction: column; align-items: center; gap: 16px; padding-block: 64px; }
+.banner-bantuan h2 { font-size: 36px; font-weight: 700; letter-spacing: -.02em; }
+.banner-bantuan p { max-width: 640px; font-size: 16px; line-height: 26px; color: rgba(255,255,255,.95); }
+
+@media (max-width: 960px) { .kos-layout { grid-template-columns: 1fr; } .filter { position: static; } }

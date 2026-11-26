@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KostKu Madiun - Platform Pencarian Kos di Kota Madiun</title>
+  <meta name="description" content="Cari kos di Madiun berdasarkan lokasi, harga, dan fasilitas. Foto asli, hubungi pemilik langsung lewat WhatsApp.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Baloo+2:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap">
+  <link rel="stylesheet" href="src/css/base.css">
+  <link rel="stylesheet" href="src/css/components.css">
+  <link rel="stylesheet" href="src/css/pages/home.css">
+</head>
+<body>
+  <header class="header" id="site-header"></header>
+
+  <main>
+    <!-- 1. Hero -->
+    <section class="hero hero--home">
+      <div class="container hero__inner hero__grid">
+        <div>
+          <span class="pill">Spesial Mahasiswa UNIPMA, Poltek Madiun dan UNS Madiun</span>
+          <h1 class="hero__title">
+            <span class="hero__big" id="hero-big">Cari kos</span>
+            <span class="hero__line">berdasarkan <mark>lokasi</mark>, harga, dan fasilitas.</span>
+          </h1>
+          <p class="hero__sub">Pilihan kos di Madiun lengkap dengan harga, fasilitas, dan foto asli. Hubungi pemilik langsung lewat WhatsApp.</p>
+          <form class="search" id="hero-search" role="search">
+            <input type="search" name="q" placeholder="Cari nama area, kampus (UNIPMA, Poltek), atau jalan" aria-label="Cari kos">
+            <button class="btn btn--yellow btn--lg" type="submit">Cari →</button>
+          </form>
+          <div class="hero__chips">
+            <a class="pill" href="kos.html?tipe=Putri">Kos Putri</a>
+            <a class="pill" href="kos.html?tipe=Putra">Kos Putra</a>
+            <a class="pill" href="kos.html?tipe=Campuran">Campuran</a>
+            <a class="pill" href="kos.html?max=999999">Di bawah Rp 1 juta</a>
+            <a class="pill" href="kos.html?f=ac">Ada AC</a>
+            <a class="pill" href="kos.html?f=kamar-mandi-dalam">Kamar Mandi Dalam</a>
+          </div>
+        </div>
+
+        <div class="hero__stage" aria-hidden="true">
+          <span class="pill hero__float">Dekat UNIPMA &amp; Poltek</span>
+          <span class="pill hero__float">Wi-Fi Cepat</span>
+          <span class="pill hero__float">Kasur Nyaman</span>
+          <span class="pill hero__float">100% Foto Terverifikasi</span>
+          <svg viewBox="0 0 300 340" aria-label="Kosty Madiun">
+            <defs>
+              <radialGradient id="kosty-body" cx=".32" cy=".25" r=".9"><stop offset="0" stop-color="#fff"/><stop offset=".6" stop-color="#EEF3FF"/><stop offset="1" stop-color="#C9D6F2"/></radialGradient>
+              <linearGradient id="kosty-roof" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#FFE48F"/><stop offset="1" stop-color="#F2A41B"/></linearGradient>
+            </defs>
+            <ellipse class="kosty-shadow" cx="150" cy="322" rx="82" ry="12" fill="#0A1A4A"/>
+            <g class="kosty-jump"><g class="kosty-breathe">
+              <rect x="112" y="294" width="28" height="26" rx="12" fill="#DCE6FA"/><rect x="162" y="294" width="28" height="26" rx="12" fill="#DCE6FA"/>
+              <rect x="70" y="150" width="160" height="162" rx="36" fill="url(#kosty-body)"/>
+              <ellipse cx="108" cy="176" rx="22" ry="10" fill="#fff" opacity=".7"/>
+              <path d="M134 312V286a16 16 0 0 1 32 0V312z" fill="#3F6BF0"/><circle cx="160" cy="298" r="2.6" fill="#FFC845"/>
+              <g class="kosty-eye"><ellipse cx="122" cy="216" rx="11" ry="14" fill="#172A5E"/><circle cx="126" cy="210" r="4.5" fill="#fff"/></g>
+              <g class="kosty-eye"><ellipse cx="178" cy="216" rx="11" ry="14" fill="#172A5E"/><circle cx="182" cy="210" r="4.5" fill="#fff"/></g>
+              <ellipse cx="98" cy="240" rx="12" ry="7" fill="#FF9EC4" opacity=".85"/><ellipse cx="202" cy="240" rx="12" ry="7" fill="#FF9EC4" opacity=".85"/>
+              <path d="M138 238q12 16 24 0z" fill="#E0436B" stroke="#172A5E" stroke-width="3.5" stroke-linejoin="round"/>
+              <path d="M50 172L150 82l100 90q4 14-10 14H60q-14 0-10-14z" fill="url(#kosty-roof)"/>
+              <path d="M60 186h180" stroke="#C97F0C" stroke-width="5" stroke-linecap="round" opacity=".45"/>
+              <path d="M126 92v14q24 12 48 0V92z" fill="#223A7C"/><path d="M104 82L150 62l46 20-46 20z" fill="#172A5E"/>
+              <path d="M192 80l4 24" stroke="#FFC845" stroke-width="3" stroke-linecap="round"/><circle cx="196" cy="108" r="4.5" fill="#FFC845"/>
+              <g class="kosty-arm"><path d="M76 228Q50 220 40 192" stroke="#C9D6F2" stroke-width="20" stroke-linecap="round" fill="none"/><path d="M76 228Q50 220 40 192" stroke="#F7F9FF" stroke-width="15" stroke-linecap="round" fill="none"/><circle cx="40" cy="190" r="12" fill="#F7F9FF" stroke="#C9D6F2" stroke-width="2"/></g>
+              <path d="M224 228Q250 240 256 264" stroke="#C9D6F2" stroke-width="20" stroke-linecap="round" fill="none"/><path d="M224 228Q250 240 256 264" stroke="#F7F9FF" stroke-width="15" stroke-linecap="round" fill="none"/>
+              <g class="kosty-key"><rect x="256" y="274" width="4" height="24" fill="#FFC845"/><rect x="260" y="286" width="7" height="4" fill="#FFC845"/><rect x="260" y="293" width="5" height="4" fill="#FFC845"/><circle cx="258" cy="270" r="7" stroke="#FFC845" stroke-width="4" fill="none"/></g>
+              <circle cx="256" cy="266" r="12" fill="#F7F9FF" stroke="#C9D6F2" stroke-width="2"/>
+            </g></g>
+          </svg>
+          <span class="hero__name">Kosty Madiun</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Strip info (diisi dari data oleh home.js) -->
+    <section class="container strip">
+      <div class="grid grid--4">
+        <div class="strip-card" style="--accent:var(--blue);--accent-soft:#DCE1FF;--accent-ink:var(--blue)">
+          <div class="strip-card__icon"><span class="icon">apartment</span></div>
+          <h3><span id="stat-jumlah">6</span> Pilihan Kos</h3><p>Tersebar di lokasi strategis Madiun</p>
+        </div>
+        <div class="strip-card" style="--accent:var(--yellow);--accent-soft:#FFF4D4;--accent-ink:#795900">
+          <div class="strip-card__icon"><span class="icon">calendar_month</span></div>
+          <h3>Harian, Bulanan, Tahunan</h3><p>Fleksibilitas sewa sesuai kebutuhan</p>
+        </div>
+        <div class="strip-card" style="--accent:var(--green);--accent-soft:#E5F8EE;--accent-ink:#1E8A55">
+          <div class="strip-card__icon"><span class="icon">payments</span></div>
+          <h3>Mulai <span id="stat-harga">Rp 700 rb</span>/bln</h3><p>Hemat dan ramah kantong mahasiswa</p>
+        </div>
+        <div class="strip-card" style="--accent:#4A78EC;--accent-soft:#EAEDFF;--accent-ink:var(--blue)">
+          <div class="strip-card__icon"><span class="icon">forum</span></div>
+          <h3>Chat Langsung via WhatsApp</h3><p>Tanpa biaya admin perantara</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Pilih sesuai penghuni -->
+    <section class="section section--white" style="margin-top:72px">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="title-lg">Pilih Sesuai Penghuni</h2>
+          <p>Temukan kenyamanan terbaik sesuai kategori dan aturan hunian yang Anda inginkan di Kota Madiun.</p>
+        </div>
+        <div class="grid grid--3">
+          <div class="kategori" style="--bg:#FFF5F8;--bd:#FFE1EC;--ink2:#C2447C">
+            <div><span class="tag tag--putri">Khusus Mahasiswi &amp; Karyawati</span>
+              <div class="kategori__icon"><span class="icon">female</span></div><h3 class="title-sm">Kos Putri</h3></div>
+            <a class="kategori__link" href="kos.html?tipe=Putri">Jelajahi Kos Putri <span class="icon">arrow_forward</span></a>
+          </div>
+          <div class="kategori" style="--bg:#F2F7FF;--bd:#DCEBFF;--ink2:#2F5FB8">
+            <div><span class="tag tag--putra">Khusus Mahasiswa &amp; Pekerja</span>
+              <div class="kategori__icon"><span class="icon">male</span></div><h3 class="title-sm">Kos Putra</h3></div>
+            <a class="kategori__link" href="kos.html?tipe=Putra">Jelajahi Kos Putra <span class="icon">arrow_forward</span></a>
+          </div>
+          <div class="kategori" style="--bg:#F9F6FF;--bd:#ECE3FF;--ink2:#6B4BC2">
+            <div><span class="tag tag--campuran">Pasutri &amp; Perantau Umum</span>
+              <div class="kategori__icon"><span class="icon">wc</span></div><h3 class="title-sm">Kos Campuran</h3></div>
+            <a class="kategori__link" href="kos.html?tipe=Campuran">Jelajahi Campuran <span class="icon">arrow_forward</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Kos pilihan -->
+    <section class="section section--cream" style="border-block:1px solid #F3E6C4">
+      <div class="container">
+        <div class="section__head section__head--row">
+          <div>
+            <span class="eyebrow">Pilihan Unggulan</span>
+            <h2 class="title-lg">Kos Pilihan di Madiun</h2>
+            <p class="text-muted" style="margin-top:8px">Rekomendasi kamar siap huni dengan fasilitas lengkap.</p>
+          </div>
+          <div class="toolbar" id="tab-tipe" role="tablist" aria-label="Filter kategori kos">
+            <button class="tabs__btn is-active" data-tipe="semua" type="button">Semua</button>
+            <button class="tabs__btn" data-tipe="Putri" type="button">Kos Putri</button>
+            <button class="tabs__btn" data-tipe="Putra" type="button">Kos Putra</button>
+            <button class="tabs__btn" data-tipe="Campuran" type="button">Campuran</button>
+          </div>
+        </div>
+        <div class="grid grid--3" id="listing"></div>
+        <div style="margin-top:32px;text-align:center"><a class="btn btn--soft btn--lg" href="kos.html">Lihat Semua Kos <span class="icon">arrow_forward</span></a></div>
+
+        <div class="simulasi" id="simulasi">
+          <span>Simulasi state data:</span>
+          <div class="tabs">
+            <button class="tabs__btn is-active" data-state="normal" type="button">Data Normal</button>
+            <button class="tabs__btn" data-state="skeleton" type="button">Memuat</button>
+            <button class="tabs__btn" data-state="error" type="button">Gagal</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Cara mencari kos -->
+    <section class="section section--soft">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="title-lg">3 Langkah Mudah Menemukan Kos Impian</h2>
+          <p>Proses cepat, transparan, dan langsung terhubung dengan pemilik tanpa biaya tambahan.</p>
+        </div>
+        <div class="grid grid--3 steps">
+          <div class="step" style="--c:var(--yellow);color:#3D2B00"><div class="step__no" style="color:#715300">1</div><h3 style="color:var(--ink)">Cari dan Filter</h3><p>Tentukan lokasi dekat kampus atau kantor, sesuaikan anggaran bulanan, dan pilih fasilitas wajib seperti AC atau kamar mandi dalam.</p></div>
+          <div class="step" style="--c:var(--blue)"><div class="step__no">2</div><h3>Pilih Kos dan Lama Menginap</h3><p>Pelajari foto kamar asli, cek aturan gerbang, dan pilih jangka waktu sewa mulai harian, bulanan, hingga tahunan.</p></div>
+          <div class="step" style="--c:var(--green)"><div class="step__no">3</div><h3>Chat WhatsApp ke Pemilik</h3><p>Klik tombol WhatsApp untuk bertanya ketersediaan kamar, menjadwalkan survei, atau langsung booking.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. CTA pemilik kos -->
+    <section class="section">
+      <div class="container">
+        <div class="cta-banner"><div class="cta-banner__inner">
+          <div>
+            <span class="pill">Mitra Pemilik KostKu</span>
+            <h2 style="margin-top:12px">Punya kos di Madiun? Gabung jadi mitra</h2>
+            <p>Tingkatkan okupansi kamar kos Anda. Pasang iklan mudah, foto ditata rapi, dan calon penyewa langsung menghubungi WhatsApp Anda.</p>
+          </div>
+          <a class="btn btn--yellow btn--lg" href="pemilik.html">Daftar sebagai Pemilik <span class="icon">chevron_right</span></a>
+        </div></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="site-footer"></footer>
+  <script type="module" src="src/js/pages/home.js"></script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+/* =====================================================
+   base.css — design token, reset, tipografi, tata letak
+   ===================================================== */
+:root {
+  /* warna merek */
+  --navy: #172A5E;
+  --blue: #2F5BD8;
+  --blue-dark: #254BB8;
+  --yellow: #FFC845;
+  --yellow-dark: #F5BD36;
+  --mint: #3DD6A5;
+  --purple: #9B8CFF;
+  --pink: #FF9EC4;
+  --green: #25B866;
+  --green-dark: #1E9E55;
+  --danger: #BA1A1A;
+  /* netral */
+  --ink: #0E1A3A;
+  --muted: #434654;
+  --outline: #747685;
+  --surface: #FAF8FF;
+  --soft: #EAF1FF;
+  --soft-2: #F2F3FF;
+  --cream: #FFF8E7;
+  --line: #E3EAF8;
+  /* bentuk & bayangan */
+  --radius: 16px;
+  --radius-lg: 24px;
+  --shadow-sm: 0 4px 16px -2px rgba(23, 42, 94, .06);
+  --shadow-md: 0 12px 24px -4px rgba(47, 91, 216, .14);
+  /* tipografi & tata letak */
+  --font: 'Inter', system-ui, sans-serif;
+  --font-display: 'Baloo 2', 'Inter', sans-serif;
+  --container: 1200px;
+  --header-h: 80px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; min-height: 100vh; display: flex; flex-direction: column;
+  font: 400 14px/22px var(--font); color: var(--ink); background: var(--surface);
+  -webkit-font-smoothing: antialiased;
+}
+main { flex: 1; padding-top: var(--header-h); }
+img, svg { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button, input, select, textarea { font: inherit; color: inherit; }
+button { cursor: pointer; border: 0; background: none; padding: 0; }
+h1, h2, h3, h4, p { margin: 0; }
+ul { margin: 0; padding: 0; list-style: none; }
+mark { background: none; color: inherit; }
+
+.icon {
+  font-family: 'Material Symbols Outlined'; font-weight: 400; font-style: normal;
+  font-size: 20px; line-height: 1; display: inline-block; vertical-align: middle;
+  letter-spacing: normal; text-transform: none; white-space: nowrap;
+  font-feature-settings: 'liga'; -webkit-font-feature-settings: 'liga';
+}
+.icon--fill { font-variation-settings: 'FILL' 1; }
+
+/* ---------- tata letak ---------- */
+.container { width: 100%; max-width: var(--container); margin-inline: auto; padding-inline: 24px; }
+.container--narrow { max-width: 960px; }
+.section { padding-block: 72px; }
+.section--white { background: #fff; }
+.section--soft { background: var(--soft); }
+.section--cream { background: var(--cream); }
+.section--low { background: var(--soft-2); }
+.section__head { max-width: 640px; margin: 0 auto 48px; text-align: center; }
+.section__head p { margin-top: 8px; color: var(--muted); }
+.section__head--row { max-width: none; margin-bottom: 40px; display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; text-align: left; flex-wrap: wrap; }
+
+.grid { display: grid; gap: 24px; }
+.grid--2 { grid-template-columns: repeat(2, 1fr); }
+.grid--3 { grid-template-columns: repeat(3, 1fr); }
+.grid--4 { grid-template-columns: repeat(4, 1fr); }
+.grid--5 { grid-template-columns: repeat(5, 1fr); }
+.stack { display: flex; flex-direction: column; gap: 16px; }
+
+/* ---------- tipografi ---------- */
+.eyebrow { display: inline-block; margin-bottom: 4px; font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--blue); }
+.title-lg { font-size: 36px; line-height: 44px; letter-spacing: -.02em; font-weight: 700; color: var(--navy); }
+.title-md { font-size: 28px; line-height: 36px; letter-spacing: -.01em; font-weight: 700; color: var(--navy); }
+.title-sm { font-size: 20px; line-height: 28px; font-weight: 700; }
+.text-muted { color: var(--muted); }
+.text-center { text-align: center; }
+
+.hidden { display: none !important; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+@media (max-width: 1024px) { .grid--5 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 900px) { .grid--3, .grid--4 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) {
+  .grid--2, .grid--3, .grid--4, .grid--5 { grid-template-columns: 1fr; }
+  .container { padding-inline: 16px; }
+  .section { padding-block: 48px; }
+  .title-lg { font-size: 28px; line-height: 36px; }
+}
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
