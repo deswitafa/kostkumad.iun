@@ -62,6 +62,22 @@ function render() {
   if (mode === 'skeleton') hasilEl.innerHTML = skeletonCards(2);
   else if (mode === 'kosong' || tampil.length === 0) hasilEl.innerHTML = emptyState();
   else hasilEl.innerHTML = renderDaftarKos(tampil);
+
+  hasilEl.querySelectorAll('img').forEach((gambar) => {
+    gambar.addEventListener('error', () => gambar.remove(), { once: true });
+  });
+
+  renderPager(mode === 'normal' ? totalHalaman : 1);
+}
+  const hasil = urutkanKos(filterKos(KOS_LIST, filter), filter.urut);
+  const totalHalaman = Math.max(1, Math.ceil(hasil.length / PER_HALAMAN));
+  halaman = Math.min(halaman, totalHalaman);
+  const tampil = hasil.slice((halaman - 1) * PER_HALAMAN, halaman * PER_HALAMAN);
+
+  $('#jumlah').textContent = mode === 'kosong' ? 0 : hasil.length;
+  if (mode === 'skeleton') hasilEl.innerHTML = skeletonCards(2);
+  else if (mode === 'kosong' || tampil.length === 0) hasilEl.innerHTML = emptyState();
+  else hasilEl.innerHTML = renderDaftarKos(tampil);
   renderPager(mode === 'normal' ? totalHalaman : 1);
 }
 

@@ -16,7 +16,7 @@ export function renderKosCard(kos) {
   return `
   <article class="kos-card${status.kode === 'penuh' ? ' is-penuh' : ''}" data-id="${kos.id}">
     <div class="kos-card__media">
-      <img src="${kos.foto[0]}" alt="Foto kamar ${escapeHtml(kos.nama)}" loading="lazy" onerror="this.remove()">
+      <img src="${kos.foto[0]}" alt="Foto kamar ${escapeHtml(kos.nama)}" loading="lazy">
       <span class="tag tag--${kos.tipe.toLowerCase()} kos-card__tag">Kos ${kos.tipe}</span>
       <span class="tag tag--${status.kode} kos-card__status">${status.label}</span>
     </div>

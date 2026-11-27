@@ -123,7 +123,7 @@ h1 em{font-style:normal;display:inline-block;background:#FFC845;color:#3D2B00;pa
   </div>
 </main>
 
-<script>
+
 (function () {
   // Ganti dengan alamat halaman pemilik kos yang sebenarnya
   var Snd=(function(){
@@ -132,7 +132,7 @@ h1 em{font-style:normal;display:inline-block;background:#FFC845;color:#3D2B00;pa
     var R=[130.81,110,87.31,98];
     function init(){if(ctx)return;ctx=new(window.AudioContext||window.webkitAudioContext)();master=ctx.createGain();master.gain.value=.2;master.connect(ctx.destination);nb=ctx.createBuffer(1,2205,44100);var d=nb.getChannelData(0);for(var i=0;i<d.length;i++)d[i]=Math.random()*2-1;}
     function tone(f,t,d,type,v,f2){var o=ctx.createOscillator(),g=ctx.createGain();o.type=type;o.frequency.setValueAtTime(f,t);if(f2)o.frequency.exponentialRampToValueAtTime(f2,t+d*.6);g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(v,t+.012);g.gain.exponentialRampToValueAtTime(.0001,t+d);o.connect(g);g.connect(master);o.start(t);o.stop(t+d+.05);}
-    function tk(t){var s=ctx.createBufferSource(),h=ctx.createBiquadFilter(),g=ctx.createGain();s.buffer=nb;h.type='highpass';h.frequency.value=7000;g.gain.setValueAtTime(.12,t);g.gain.exponentialRampToValueAtTime(.0001,t+.04);s.connect(h);h.connect(g);g.connect(master);s.start(t);}
+    <script type="module" src="src/js/pages/memuat-pemilik.js"></script>
     function sched(){var sd=60/P.bpm/2;while(next<ctx.currentTime+.15){var s=step%32,f=M[s];if(f){tone(f,next,.45,P.wave,.5);tone(f*2,next,.2,'sine',.1);}if(P.bass&&s%4===0)tone(R[s>>3],next,.35,'sine',.7);if(P.tick&&s%2)tk(next);next+=sd;step++;}}
     function seq(a,gap,type,d,v){var t=ctx.currentTime+.02;a.forEach(function(f,i){tone(f,t+i*gap,d,type,v);});}
     var FX={

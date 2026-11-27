@@ -1,4 +1,4 @@
-/** Halaman Beranda: statistik, hero interaktif, dan daftar kos pilihan. */
+/** Halaman Beranda: statistik, hero interak<imgtif, dan daftar kos pilihan. */
 import { mountLayout } from '../components/layout.js';
 import { renderDaftarKos } from '../components/kos-card.js';
 import { skeletonCards, errorState } from '../components/states.js';
@@ -26,6 +26,10 @@ function animasiJudul() {
 function tampilkanKos() {
   const hasil = KOS_LIST.filter((k) => tipeAktif === 'semua' || k.tipe === tipeAktif).slice(0, JUMLAH_PILIHAN);
   listing.innerHTML = renderDaftarKos(hasil);
+
+  listing.querySelectorAll('img').forEach((gambar) => {
+    gambar.addEventListener('error', () => gambar.remove(), { once: true });
+  });
 }
 
 function setState(state) {

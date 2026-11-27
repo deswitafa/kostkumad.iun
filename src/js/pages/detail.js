@@ -24,7 +24,7 @@ const inisial = (nama) => nama.split(' ').slice(0, 2).map((s) => s[0]).join('').
 /* ---------- template bagian halaman ---------- */
 const tplGaleri = (k, status) => {
   const [utama, kedua, ketiga] = [k.foto[0], k.foto[1] ?? k.foto[0], k.foto[2] ?? k.foto[0]];
-  const img = (src, alt) => `<img src="${src}" alt="${escapeHtml(alt)}" loading="lazy" onerror="this.remove()">`;
+  const img = (src, alt) => `<img src="${src}" alt="${escapeHtml(alt)}"  loading="lazy">`;
   return `
   <section aria-label="Galeri foto">
     <div class="gallery">
